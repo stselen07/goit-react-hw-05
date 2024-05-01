@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import css from "./MovieReviews.module.css";
 const MovieReviews = () => {
   const { movieId } = useParams();
-  const [rewiews, setRewiews] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
