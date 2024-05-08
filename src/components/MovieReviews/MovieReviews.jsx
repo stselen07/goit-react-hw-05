@@ -1,6 +1,6 @@
 import css from './MovieReviews.module.css';
 import { useState, useEffect } from 'react';
-import { getReviews } from '../ApiService/ApiService';
+import { ApiMovieRewiews } from '../ApiService/ApiService';
 import { useParams } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
@@ -21,7 +21,7 @@ export default function MoviesReviews( ) {
         try {
             setError(false);
             setIsLoading(true);
-        const data = await getReviews(movieId)
+        const data = await ApiMovieRewiews (movieId)
         setReviews(data.result.results);
         console.log(data.result.results);
     } catch (error) {
